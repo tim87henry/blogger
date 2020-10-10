@@ -1,4 +1,9 @@
 <h1><%= @article.title %></h1>
+<p>
+  <% if @article.image.exists? %>
+  <%= image_tag @article.image.url(:medium) %><br/>
+  <% end %>
+</p>
 <%= @article.body %>
 <br><br>
 <%= link_to "Edit Article",edit_article_path(@article) %>
