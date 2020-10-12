@@ -13,4 +13,14 @@
     <p class="flash"><%= flash.notice %></p>
     <%= yield %>
   </body>
+  <h6>
+  <br><br>
+  <% if logged_in? %>
+    <%= "Logged in as #{current_user.email}" %>
+    <%= link_to "(logout)", logout_path %>
+  <% else %>
+  <%= link_to "(login)", login_path %>
+  <% end %>
+  </h6>
+  
 </html>
